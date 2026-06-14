@@ -11,6 +11,10 @@ env:
   CR_GIT_REPO: ${{ github.event.repository.name }}
   CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -45,6 +49,9 @@ jobs:
     - name: Pack and release
       run: |
         cr package "charts/${CHART_NAME}"
-        cr upload "charts/${CHART_NAME}"
+        cr upload "charts/${CHART_NAME}" --skip-existing
+
+    - name: Update Helm Repo Index
+      run: |
         mkdir .cr-index
         cr index "charts/${CHART_NAME}" --push

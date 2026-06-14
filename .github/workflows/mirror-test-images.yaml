@@ -1,0 +1,19 @@
+name: Mirror test chart images
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log into Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ vars.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Copy soveren test images to securesky
+        run: |
+          for img in receiver sender satellite; do
+            docker pull "soveren/${img}:latest"
+            docker tag "soveren/${img}:latest" "${{ vars.DOCKERHUB_NAMESPACE }}/${img}:latest"
+            docker push "${{ vars.DOCKERHUB_NAMESPACE }}/${img}:latest"
+          done

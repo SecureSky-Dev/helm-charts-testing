@@ -8,7 +8,7 @@ receiver:
   daemonSetLabels: {}
   podAnnotations: {}
   image:
-    name: soveren/receiver
+    name: securesky/receiver
     tag: latest
     pullPolicy: Always
   podLabels: {}
@@ -36,7 +36,7 @@ sender:
   daemonSetLabels: {}
   podAnnotations: {}
   image:
-    name: soveren/sender
+    name: securesky/sender
     tag: latest
     pullPolicy: Always
   podLabels: {"soveren-test"}
@@ -66,7 +66,7 @@ satellite:
   daemonSetLabels: {}
   podAnnotations: {}
   image:
-    name: soveren/satellite
+    name: securesky/satellite
     tag: latest
     pullPolicy: Always
   podLabels: {}

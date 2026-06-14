@@ -4,11 +4,11 @@ This chart deploys a Soveren Data-in-motion (DIM) Sensor testbed into your exist
 
 ## Prerequisites
 
-The primary prerequisite is having the Soveren DIM Sensor deployed in one of your Kubernetes clusters. Refer to our [quick start guide](https://docs.soveren.io/en/stable/getting-started/quick-start/#data-in-motion-dim) for instructions on setting up the DIM Sensor.
+The primary prerequisite is having the Soveren DIM Sensor deployed in one of your Kubernetes clusters. Refer to our [quick start guide](https://docs.adaptiveshield.ai/en/stable/getting-started/quick-start/#data-in-motion-dim) for instructions on setting up the DIM Sensor.
 
 To install the DIM Sensor, you will need the following:
 
-- A Soveren account. If you don't have one already, [sign up](https://app.soveren.io/sign-up).
+- A Soveren account. If you don't have one already, [sign up](https://app.adaptiveshield.ai/sign-up).
 - A working [Helm](https://helm.sh) installation. Please refer to the [documentation](https://helm.sh/docs) to get started.
 
 ## Installation
@@ -16,7 +16,7 @@ To install the DIM Sensor, you will need the following:
 Add the Soveren testing Helm repository:
 
 ```shell
-helm repo add soveren-test https://soverenio.github.io/helm-charts-testing
+helm repo add soveren-test https://securesky-dev.github.io/helm-charts-testing
 ```
 Install the `soveren-test` chart:
 
@@ -57,7 +57,7 @@ For these requests, a collection of approximately 2000 random URLs is used, alon
 
 In response to these requests:
 
-- The `Receiver` produces a `JSON` response composed of a random dataset that includes fields of type `Card`, `Email`, `Location`, `Person`, and `SSN`. This ensures that the derived dataset exhibits `high` sensitivity. For a comprehensive explanation, consult the [Sensitive data model](https://docs.soveren.io/en/stable/user-guide/data-model/#the-sensitivity-model).
+- The `Receiver` produces a `JSON` response composed of a random dataset that includes fields of type `Card`, `Email`, `Location`, `Person`, and `SSN`. This ensures that the derived dataset exhibits `high` sensitivity. For a comprehensive explanation, consult the [Sensitive data model](https://docs.adaptiveshield.ai/en/stable/user-guide/data-model/#the-sensitivity-model).
 - The `Satellite` generates a `JSON` response containing the `Email` field and several other random types, resulting in a `medium` sensitivity level.
 - The `Echo server` simply echoes back whatever data it receives.
 
@@ -65,7 +65,7 @@ In response to these requests:
 
 ### Data map
 
-After deploying this chart, you will observe the following in the [data map](https://app.soveren.io/data-map):
+After deploying this chart, you will observe the following in the [data map](https://app.adaptiveshield.ai/data-map):
 
 ![Data map with test assets](./img/data-map-overview.png "Data map with test assets")
 
@@ -85,7 +85,7 @@ and `Echo server` which is in the `Other outgoing` asset on the map:
 
 ### Service catalog
 
-The [service catalog](https://app.soveren.io/service-catalog/) provides detailed views of the discovered services and the flows between them.
+The [service catalog](https://app.adaptiveshield.ai/service-catalog/) provides detailed views of the discovered services and the flows between them.
 
 Services located inside the cluster:
 
@@ -107,8 +107,8 @@ The full list of API endpoints provided by the discovered services should look a
 
 ## Further testing options
 
-You might also want to test a Soveren Data-at-rest (DAR) Sensor. The simplest way to do that is to [deploy the DAR Sensor](https://docs.soveren.io/en/stable/getting-started/quick-start/#data-at-rest-dar), point it to your [existing S3 bucket](https://docs.soveren.io/en/stable/administration/configuring-sensor/#s3-buckets), and add to that bucket some JSON or CSV files containing data that resembles personal information.
+You might also want to test a Soveren Data-at-rest (DAR) Sensor. The simplest way to do that is to [deploy the DAR Sensor](https://docs.adaptiveshield.ai/en/stable/getting-started/quick-start/#data-at-rest-dar), point it to your [existing S3 bucket](https://docs.adaptiveshield.ai/en/stable/administration/configuring-sensor/#s3-buckets), and add to that bucket some JSON or CSV files containing data that resembles personal information.
 
 Soveren can also provide you with access to a sandbox environment populated with synthetic data resembling an actual configuration. That configuration includes web services in Kubernetes clusters, S3 buckets, Kafka clusters, and databases in different locations.
 
-This sandbox, while artificial, provides the best view into what you might be able to see in your actual environment. Please contact us at [support@soveren.io](mailto:support@soveren.io?Subject=Sandbox) if you are willing to try the sandbox.
+This sandbox, while artificial, provides the best view into what you might be able to see in your actual environment. Please contact us at [support@adaptiveshield.ai](mailto:support@adaptiveshield.ai?Subject=Sandbox) if you are willing to try the sandbox.
