@@ -254,4 +254,15 @@ entries:
     urls:
     - https://github.com/soverenio/helm-charts-testing/releases/download/soveren-test-0.1.3/soveren-test-0.1.3.tgz
     version: 0.1.3
-generated: "2024-12-26T08:47:19.373427917Z"
+  - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2026-06-14T17:31:39.459987405Z"
+    description: A test toolset for Soveren app
+    digest: 673fcd50d1c7964666b5e127537221744de0b616577c3463283295190be6b3ab
+    home: https://adaptiveshield.ai
+    name: soveren-test
+    type: application
+    urls:
+    - https://github.com/SecureSky-Dev/helm-charts-testing/releases/download/soveren-test-0.0.0-pages-test.1/soveren-test-0.0.0-pages-test.1.tgz
+    version: 0.0.0-pages-test.1
+generated: "2026-06-14T17:31:39.46005898Z"
