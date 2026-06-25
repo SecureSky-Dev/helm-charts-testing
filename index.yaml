@@ -3,6 +3,17 @@ entries:
   soveren-test:
   - apiVersion: v2
     appVersion: 0.1.2
+    created: "2026-06-25T11:25:37.511659823Z"
+    description: A test toolset for Soveren app
+    digest: 115392af1c60b305aaf42a0a1b9f03f478abd6f426beafe599a455c50604bfff
+    home: https://adaptiveshield.ai
+    name: soveren-test
+    type: application
+    urls:
+    - https://github.com/SecureSky-Dev/helm-charts-testing/releases/download/soveren-test-0.1.27/soveren-test-0.1.27.tgz
+    version: 0.1.27
+  - apiVersion: v2
+    appVersion: 0.1.2
     created: "2024-12-26T08:47:19.373242738Z"
     description: A test toolset for Soveren app
     digest: 6bf55f676773cec42926bc9586dc1651c2ed873c107ece96a4c95184deb1f685
@@ -265,4 +276,4 @@ entries:
     urls:
     - https://github.com/SecureSky-Dev/helm-charts-testing/releases/download/soveren-test-0.0.0-pages-test.1/soveren-test-0.0.0-pages-test.1.tgz
     version: 0.0.0-pages-test.1
-generated: "2026-06-14T17:31:39.46005898Z"
+generated: "2026-06-25T11:25:37.51186451Z"
